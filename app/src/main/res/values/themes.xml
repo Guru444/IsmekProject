@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.IsmekProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/kirmizi</item>
-        <item name="colorPrimaryVariant">@color/kirmizi</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

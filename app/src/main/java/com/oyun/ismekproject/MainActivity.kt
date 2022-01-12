@@ -1,9 +1,12 @@
 package com.oyun.ismekproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main3.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -11,6 +14,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
+
+        btn_gonder.setOnClickListener {
+            val intent = Intent(this,HosgeldinActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(this,"Ben Butonum", Toast.LENGTH_SHORT).show()
+        }
+
 
         val sayi = 5
         var sayi2: Int = 5
@@ -115,6 +125,13 @@ class MainActivity : AppCompatActivity() {
 
     fun toplama(sayi1: Int, sayi2: Int) : String{
         return (sayi1 + sayi2).toString()
+    }
+    fun toplama2(){
+
+    }
+    var toplama4: Int = 0
+    fun toplama3() : Int{
+        return 44 + 10
     }
 }
 
