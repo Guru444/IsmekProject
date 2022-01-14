@@ -15,11 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
 
-        btn_gonder.setOnClickListener {
-            val intent = Intent(this,HosgeldinActivity::class.java)
-            startActivity(intent)
-            Toast.makeText(this,"Ben Butonum", Toast.LENGTH_SHORT).show()
-        }
 
 
         val sayi = 5

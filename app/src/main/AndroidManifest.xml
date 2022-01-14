@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IsmekProject">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewLayoutLearn"
+            android:exported="false" />
+        <activity
             android:name=".HosgeldinActivity"
             android:exported="false" />
         <activity
