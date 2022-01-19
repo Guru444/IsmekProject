@@ -16,13 +16,13 @@
         android:text="Button1"/>
 
     <Button
-        android:id="@+id/btn_button2"
+        android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="12dp"
-        android:text="Button2"
+        android:text="Kayıt Ol Sayfasını aç"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button

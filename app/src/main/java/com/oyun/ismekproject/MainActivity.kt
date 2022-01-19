@@ -7,14 +7,19 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main3.*
+import kotlinx.android.synthetic.main.activity_new_layout_learn.*
 import java.util.*
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main3)
+        setContentView(R.layout.activity_new_layout_learn)
 
+        btn_register.setOnClickListener {
+            val intent = Intent(this,RegisterActivity::class.java)
+            startActivity(intent)
+        }
 
 
         val sayi = 5
