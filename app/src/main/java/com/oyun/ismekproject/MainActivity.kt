@@ -13,6 +13,7 @@ import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_IsmekProject)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_layout_learn)
 

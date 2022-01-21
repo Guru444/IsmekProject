@@ -3,21 +3,27 @@ package com.oyun.ismekproject
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.widget.Toast
 import androidx.core.view.isEmpty
 import com.oyun.ismekproject.databinding.ActivityRegisterBinding
 import com.oyun.ismekproject.util.IsmekConstants
+import com.oyun.ismekproject.util.merhabaDe
 import kotlinx.android.synthetic.main.activity_new_layout_learn.*
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
+        "Murat".merhabaDe()
+
         binding.apply {
             btnRegister.setOnClickListener {
                 if (formValidation()) {
@@ -28,6 +34,7 @@ class RegisterActivity : AppCompatActivity() {
                         putExtra(IsmekConstants.USER_EMAIL, etmail.text.toString())
                     }
                     startActivity(intent)
+                    finish()
                 }
             }
         }
@@ -70,5 +77,41 @@ class RegisterActivity : AppCompatActivity() {
 
         return isValid
     }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("Sonuc","onResume")
+        Handler(Looper.getMainLooper()).postDelayed({
+            Toast.makeText(this,"3 saniye geçti", Toast.LENGTH_SHORT).show()
+            //btn_register.performClick()
+        },3000)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("Sonuc","onDestroy")
+
+        Toast.makeText(this,"onDestroy", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("Sonuc","onPause")
+
+        Toast.makeText(this,"onPause", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("Sonuc","onStop")
+
+        Toast.makeText(this,"onStop", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Toast.makeText(this,"Geri tusuna basıldı", Toast.LENGTH_SHORT).show()
+    }
+
 
 }
