@@ -9,6 +9,8 @@ import kotlinx.android.synthetic.main.user_name_list_item_layout.view.*
 
 class UserNameListAdapter : RecyclerView.Adapter<UserNameListAdapter.NameViewHolder>() {
 
+
+    var nameClickListener: (String,Int) -> Unit = { _,_-> }
     var userNameListesi: ArrayList<String> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = NameViewHolder(
@@ -25,6 +27,9 @@ class UserNameListAdapter : RecyclerView.Adapter<UserNameListAdapter.NameViewHol
     inner class NameViewHolder(view: View): RecyclerView.ViewHolder(view) {
         fun bind(s: String) {
             itemView.tv_name.text = s
+            itemView.setOnClickListener {
+                nameClickListener(s,adapterPosition)
+            }
         }
     }
     fun datayiAl(userNameList: ArrayList<String>){

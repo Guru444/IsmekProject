@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">IsmekProject</string>
     <string name="welcome">MERHABA HOŞGELDİNİZ</string>
+    <string name="welcome_text">Hoşgeldin %1$s %2$s</string>
 </resources>
