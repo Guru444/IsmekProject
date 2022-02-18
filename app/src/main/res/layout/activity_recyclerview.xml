@@ -22,6 +22,55 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="26sp"/>
 
+
+    <EditText
+        android:id="@+id/edt_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Lütfen kelime gir"
+        android:textColor="@color/white"
+        android:layout_margin="12dp"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tv_name_list_title"/>
+
+    <EditText
+        android:id="@+id/edt_age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Lütfen Yaş gir"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:layout_margin="12dp"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/edt_input"/>
+
+    <EditText
+        android:id="@+id/edt_height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Lütfen Boy gir"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:layout_margin="12dp"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/edt_age"/>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_height"
+        android:text="Ekle"
+        android:layout_margin="12dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_name_list"
         android:layout_width="0dp"
@@ -30,7 +79,7 @@
         tools:listitem="@layout/user_name_list_item_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_name_list_title"
+        app:layout_constraintTop_toBottomOf="@id/btn_add"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 

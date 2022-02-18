@@ -5,13 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.oyun.ismekproject.R
+import com.oyun.ismekproject.model.UserInfo
 import kotlinx.android.synthetic.main.user_name_list_item_layout.view.*
 
 class UserNameListAdapter : RecyclerView.Adapter<UserNameListAdapter.NameViewHolder>() {
 
-
-    var nameClickListener: (String,Int) -> Unit = { _,_-> }
-    var userNameListesi: ArrayList<String> = arrayListOf()
+    //Lambda listener
+    var nameClickListener: (String, Int) -> Unit = { _,_-> }
+    var removeClickListener: (Int) -> Unit = {}
+    var userNameListesi: ArrayList<UserInfo> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = NameViewHolder(
         LayoutInflater.from(parent.context)
@@ -25,15 +27,30 @@ class UserNameListAdapter : RecyclerView.Adapter<UserNameListAdapter.NameViewHol
     override fun getItemCount() = userNameListesi.size
 
     inner class NameViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        fun bind(s: String) {
-            itemView.tv_name.text = s
-            itemView.setOnClickListener {
-                nameClickListener(s,adapterPosition)
+        fun bind(user: UserInfo) {
+            with(user){
+                itemView.tv_name.text = userName
+                itemView.tv_age.text = userAge.toString()
+                itemView.tv_height.text = userHeight.toString()
+            }
+            itemView.srl_main.setOnClickListener {
+                user.userName?.let {
+                    nameClickListener(it, adapterPosition)
+                }
+            }
+            itemView.remove_item.setOnClickListener {
+                removeClickListener(user.userId)
+                userNameListesi.removeAt(adapterPosition)
+                notifyDataSetChanged()
             }
         }
     }
-    fun datayiAl(userNameList: ArrayList<String>){
+    fun datayiAl(userNameList: ArrayList<UserInfo>){
+        userNameListesi.clear()
         userNameListesi.addAll(userNameList)
         notifyDataSetChanged()
     }
+    //String -> Ahmet adi
+    //Int -> 23 yas
+    //Int -> 150 boyu
 }
