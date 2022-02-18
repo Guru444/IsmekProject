@@ -50,7 +50,5 @@ class UserNameListAdapter : RecyclerView.Adapter<UserNameListAdapter.NameViewHol
         userNameListesi.addAll(userNameList)
         notifyDataSetChanged()
     }
-    //String -> Ahmet adi
-    //Int -> 23 yas
-    //Int -> 150 boyu
+
 }
